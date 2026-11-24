@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patitas Pet Shop | Banho e tosa em Camboriú</title>
+<meta name="description" content="Patitas Pet Shop em Camboriú: banho, tosa, hidratação, Day Use, Leva e Traz e loja completa. O melhor lugar para o seu pet. Rua João Morais, 241, Centro.">
+<meta property="og:title" content="Patitas Pet Shop | O melhor lugar para o seu pet">
+<meta property="og:description" content="Banho, tosa, Day Use e Leva e Traz em Camboriú. Seu pet volta limpinho, cheiroso e feliz.">
+<meta property="og:image" content="img/akita.webp">
+<meta name="theme-color" content="#FF7A1A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --laranja:#FF7A1A; --laranja-2:#FF9A3C; --laranja-d:#E35F00;
+  --ceu:#2EA8FF; --sol:#FFC531; --rosa:#FF5FA2; --menta:#22C3A0; --lilas:#8B6CFF;
+  --creme:#FFF7EC; --creme-2:#FFEBD3; --tinta:#2A1A0F; --cinza:#6E5D50;
+  --r:28px; --sombra:0 18px 40px -18px rgba(120,60,10,.35);
+  --t:'Fredoka', system-ui, sans-serif; --c:'Nunito', system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:var(--c);background:var(--creme);color:var(--tinta);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--t);font-weight:600;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(2.1rem,4.6vw,3.4rem)}
+.selo{display:inline-flex;align-items:center;gap:8px;font-family:var(--t);font-weight:600;font-size:.92rem;padding:8px 16px;border-radius:999px;background:#fff;box-shadow:0 6px 16px -8px rgba(120,60,10,.3)}
+.selo svg{width:18px;height:18px}
+.destaque{color:var(--laranja);position:relative;white-space:nowrap}
+.destaque::after{content:"";position:absolute;left:-2%;right:-2%;bottom:.04em;height:.32em;background:var(--sol);border-radius:999px;z-index:-1;opacity:.7}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;font-family:var(--t);font-weight:600;font-size:1.05rem;border:0;cursor:pointer;transition:transform .25s cubic-bezier(.3,1.6,.5,1),box-shadow .25s}
+.btn:hover{transform:translateY(-3px) rotate(-1deg)}
+.btn svg{width:20px;height:20px}
+.btn-laranja{background:var(--laranja);color:#fff;box-shadow:0 8px 0 var(--laranja-d),0 18px 30px -10px rgba(255,122,26,.6)}
+.btn-laranja:active{transform:translateY(4px);box-shadow:0 3px 0 var(--laranja-d)}
+.btn-branco{background:#fff;color:var(--tinta);box-shadow:0 8px 0 var(--creme-2),0 18px 30px -14px rgba(120,60,10,.3)}
+
+/* barra topo */
+.barra{background:var(--tinta);color:#FFE7CF;font-size:.82rem;font-weight:600}
+.barra .wrap{display:flex;justify-content:space-between;gap:16px;padding:9px 0;flex-wrap:wrap}
+.barra span{display:inline-flex;align-items:center;gap:7px}
+.barra svg{width:14px;height:14px;color:var(--sol)}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,247,236,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:box-shadow .3s}
+header.sombra{box-shadow:0 8px 24px -16px rgba(120,60,10,.4)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo .pata{width:46px;height:46px;border-radius:50%;background:var(--laranja);display:grid;place-items:center;box-shadow:0 4px 0 var(--laranja-d);transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.logo:hover .pata{transform:rotate(-14deg) scale(1.06)}
+.logo .pata svg{width:26px;height:26px;color:#fff}
+.logo b{font-family:var(--t);font-weight:700;font-size:1.65rem;letter-spacing:.02em;line-height:.9;display:block}
+.logo small{display:block;font-size:.62rem;letter-spacing:.36em;font-weight:800;color:var(--laranja)}
+.menu{display:flex;gap:28px;font-weight:700;font-size:.95rem}
+.menu a{position:relative;padding:6px 0}
+.menu a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;border-radius:3px;background:var(--laranja);transform:scaleX(0);transition:transform .3s}
+.menu a:hover::after{transform:scaleX(1)}
+.nav .btn{padding:12px 20px;font-size:.95rem}
+.burger{display:none;width:44px;height:44px;border-radius:14px;border:0;background:#fff;box-shadow:var(--sombra);cursor:pointer}
+
+/* hero */
+.hero{position:relative;padding:56px 0 110px;overflow:hidden}
+.hero::before{content:"";position:absolute;width:780px;height:780px;right:-220px;top:-200px;background:radial-gradient(circle,var(--creme-2) 0 60%,transparent 61%);z-index:-1}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+.hero h1{font-size:clamp(2.8rem,6.4vw,5.2rem);margin:20px 0 22px}
+.hero p.lead{font-size:1.18rem;color:var(--cinza);max-width:520px}
+.hero .ctas{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}
+.provas{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+.provas .selo:nth-child(1) svg{color:var(--sol)}
+.provas .selo:nth-child(2) svg{color:var(--ceu)}
+.provas .selo:nth-child(3) svg{color:var(--menta)}
+.palco{position:relative;height:600px}
+.tela{position:absolute;left:50%;top:50%;width:300px;height:520px;transform:translate(-50%,-50%) rotate(2deg);border-radius:38px;overflow:hidden;border:8px solid #fff;box-shadow:0 30px 60px -20px rgba(120,60,10,.5);background:var(--rosa)}
+.tela video{width:100%;height:100%;object-fit:cover}
+.foto-solta{position:absolute;background:#fff;padding:9px 9px 34px;border-radius:14px;box-shadow:0 20px 40px -18px rgba(120,60,10,.5);transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.foto-solta img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px}
+.foto-solta span{position:absolute;left:0;right:0;bottom:7px;text-align:center;font-family:var(--t);font-weight:600;font-size:.95rem}
+.foto-solta.a{width:180px;left:-4px;top:40px;transform:rotate(-9deg)}
+.foto-solta.b{width:170px;right:-6px;bottom:50px;transform:rotate(8deg)}
+.foto-solta.a:hover{transform:rotate(-3deg) scale(1.05)}
+.foto-solta.b:hover{transform:rotate(3deg) scale(1.05)}
+.balao{position:absolute;right:0;top:56px;max-width:220px;background:var(--ceu);color:#fff;padding:16px 18px;border-radius:22px 22px 22px 6px;font-family:var(--t);font-weight:500;font-size:1.02rem;line-height:1.25;box-shadow:0 14px 30px -12px rgba(46,168,255,.7);animation:boia 5s ease-in-out infinite}
+.balao.l{left:6px;right:auto;top:auto;bottom:70px;background:var(--rosa);border-radius:22px 22px 6px 22px;box-shadow:0 14px 30px -12px rgba(255,95,162,.7);animation-delay:-2.5s;max-width:190px}
+@keyframes boia{50%{transform:translateY(-10px)}}
+.bolhas{position:absolute;inset:0;pointer-events:none;z-index:-1}
+.bolhas i{position:absolute;bottom:-60px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff 0 12%,rgba(255,255,255,.35) 13% 40%,rgba(46,168,255,.18) 41%);border:2px solid rgba(46,168,255,.25);animation:sobe linear infinite}
+@keyframes sobe{to{transform:translateY(-760px) translateX(30px)}}
+.onda{display:block;width:100%;height:60px}
+
+/* faixa */
+.faixa{background:var(--laranja);color:#fff;overflow:hidden;padding:18px 0;transform:rotate(-1.4deg);margin:-30px -10px 0;position:relative;z-index:2;box-shadow:0 10px 30px -14px rgba(255,122,26,.8)}
+.faixa .trilho{display:flex;gap:40px;width:max-content;animation:corre 30s linear infinite}
+.faixa span{font-family:var(--t);font-weight:600;font-size:1.5rem;white-space:nowrap;display:flex;align-items:center;gap:40px}
+.faixa span::after{content:"";width:26px;height:26px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFC531'%3E%3Cellipse cx='6' cy='9' rx='2.2' ry='3'/%3E%3Cellipse cx='18' cy='9' rx='2.2' ry='3'/%3E%3Cellipse cx='9.5' cy='5' rx='2.2' ry='3'/%3E%3Cellipse cx='14.5' cy='5' rx='2.2' ry='3'/%3E%3Cpath d='M12 11c-3.5 0-6 3.6-6 6 0 2 1.6 3 3.3 3 1.2 0 1.8-.6 2.7-.6s1.5.6 2.7.6C16.4 20 18 19 18 17c0-2.4-2.5-6-6-6z'/%3E%3C/svg%3E") center/contain no-repeat}
+@keyframes corre{to{transform:translateX(-50%)}}
+
+section{position:relative}
+.pad{padding:110px 0}
+.cab{text-align:center;max-width:720px;margin:0 auto 60px}
+.cab p{color:var(--cinza);font-size:1.12rem;margin-top:16px}
+.cab .selo{margin-bottom:18px}
+
+/* tranquilidade */
+.tranq-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.tq{background:#fff;border-radius:var(--r);padding:32px 26px;box-shadow:var(--sombra);transition:transform .35s cubic-bezier(.3,1.6,.5,1);position:relative;overflow:hidden}
+.tq:hover{transform:translateY(-8px) rotate(-1deg)}
+.tq .ic{width:62px;height:62px;border-radius:20px;display:grid;place-items:center;margin-bottom:20px;color:#fff;transform:rotate(-6deg)}
+.tq .ic svg{width:30px;height:30px}
+.tq:nth-child(1) .ic{background:var(--ceu)}
+.tq:nth-child(2) .ic{background:var(--rosa)}
+.tq:nth-child(3) .ic{background:var(--menta)}
+.tq:nth-child(4) .ic{background:var(--sol);color:var(--tinta)}
+.tq h3{font-size:1.35rem;margin-bottom:10px}
+.tq p{color:var(--cinza);font-size:.97rem}
+.tq::after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;right:-50px;bottom:-50px;background:var(--creme);z-index:0}
+.tq>*{position:relative;z-index:1}
+
+/* serviços */
+.servicos{background:#fff;border-radius:56px;margin:0 14px}
+.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.sv{border-radius:var(--r);overflow:hidden;background:var(--creme);display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.3,1.6,.5,1),box-shadow .35s}
+.sv:hover{transform:translateY(-8px);box-shadow:var(--sombra)}
+.sv .foto{position:relative;aspect-ratio:4/3;overflow:hidden}
+.sv .foto img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.sv:hover .foto img{transform:scale(1.07)}
+.sv .tag{position:absolute;left:16px;top:16px;font-family:var(--t);font-weight:600;font-size:.82rem;padding:6px 13px;border-radius:999px;color:#fff}
+.sv .corpo{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
+.sv h3{font-size:1.5rem;margin-bottom:8px}
+.sv p{color:var(--cinza);font-size:.97rem;flex:1}
+.sv .ag{margin-top:18px;font-family:var(--t);font-weight:600;color:var(--laranja-d);display:inline-flex;align-items:center;gap:8px}
+.sv .ag svg{width:18px;height:18px;transition:transform .3s}
+.sv:hover .ag svg{transform:translateX(5px)}
+.loja{margin-top:24px;border-radius:var(--r);background:linear-gradient(120deg,var(--sol),var(--laranja-2));padding:36px 40px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}
+.loja h3{font-size:1.9rem;margin-bottom:8px}
+.loja p{font-weight:600;max-width:640px}
+.loja .itens{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.loja .itens span{background:rgba(255,255,255,.75);padding:6px 13px;border-radius:999px;font-size:.85rem;font-weight:700}
+
+/* reels */
+.reels-wrap{background:var(--tinta);color:#fff;overflow:hidden}
+.reels-wrap .cab p{color:#E9D6C4}
+.reels-wrap .selo{background:var(--laranja);color:#fff}
+.reels{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 20px 30px;scrollbar-width:none;justify-content:safe center}
+.reels::-webkit-scrollbar{display:none}
+.reel{flex:none;width:200px;scroll-snap-align:center;cursor:pointer;border:0;background:none;color:inherit;text-align:left}
+.reel .cx{position:relative;aspect-ratio:9/16;border-radius:26px;overflow:hidden;border:5px solid #fff;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.reel:nth-child(odd) .cx{transform:rotate(-2deg)}
+.reel:nth-child(even) .cx{transform:rotate(2deg)}
+.reel:hover .cx{transform:rotate(0) scale(1.03)}
+.reel img,.reel video{width:100%;height:100%;object-fit:cover}
+.reel .play{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.5))}
+.reel .play b{width:66px;height:66px;border-radius:50%;background:var(--laranja);display:grid;place-items:center;box-shadow:0 0 0 8px rgba(255,122,26,.3);transition:transform .3s}
+.reel:hover .play b{transform:scale(1.12)}
+.reel .play svg{width:26px;height:26px;color:#fff;margin-left:4px}
+.reel.tocando .play{display:none}
+.reel p{margin-top:16px;font-weight:700;font-size:.95rem;color:#F5E3D2;padding:0 6px}
+
+/* galeria */
+.galeria{columns:4 220px;column-gap:20px}
+.pol{break-inside:avoid;margin-bottom:22px;background:#fff;padding:10px 10px 14px;border-radius:16px;box-shadow:var(--sombra);transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.pol:nth-child(3n+1){transform:rotate(-2deg)}
+.pol:nth-child(3n+2){transform:rotate(1.5deg)}
+.pol:hover{transform:rotate(0) scale(1.04);z-index:2;position:relative}
+.pol img{width:100%;border-radius:10px}
+.pol span{display:block;text-align:center;font-family:var(--t);font-weight:600;margin-top:10px;font-size:1.05rem}
+
+/* espaço */
+.espaco-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.espaco .midias{position:relative;height:560px}
+.espaco .v{position:absolute;left:0;top:0;width:62%;height:100%;border-radius:var(--r);overflow:hidden;box-shadow:var(--sombra)}
+.espaco .v video{width:100%;height:100%;object-fit:cover}
+.espaco .f1,.espaco .f2{position:absolute;right:0;width:44%;border-radius:22px;overflow:hidden;border:6px solid var(--creme);box-shadow:var(--sombra)}
+.espaco .f1{top:30px;aspect-ratio:4/5}
+.espaco .f2{bottom:20px;aspect-ratio:1}
+.espaco .f1 img,.espaco .f2 img{width:100%;height:100%;object-fit:cover}
+.lista{list-style:none;display:grid;gap:14px;margin-top:28px}
+.lista li{display:flex;gap:14px;align-items:flex-start;font-weight:600;font-size:1.04rem}
+.lista li i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--menta);display:grid;place-items:center;color:#fff;margin-top:-2px}
+.lista li i svg{width:16px;height:16px}
+.espaco p.txt{color:var(--cinza);font-size:1.1rem;margin-top:18px}
+
+/* equipe + avaliações */
+.aval{background:var(--ceu);color:#fff;border-radius:56px;margin:0 14px;overflow:hidden}
+.aval-top{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center;margin-bottom:56px}
+.equipe-foto{position:relative}
+.equipe-foto img{border-radius:var(--r);aspect-ratio:4/5;object-fit:cover;width:100%;border:7px solid #fff;transform:rotate(-3deg)}
+.equipe-foto .adesivo{position:absolute;right:-18px;bottom:30px;background:var(--sol);color:var(--tinta);font-family:var(--t);font-weight:600;padding:14px 18px;border-radius:20px;transform:rotate(6deg);box-shadow:0 12px 24px -10px rgba(0,0,0,.4);font-size:1.05rem;line-height:1.2}
+.nota{display:flex;align-items:center;gap:18px;margin:22px 0}
+.nota b{font-family:var(--t);font-size:4.2rem;line-height:1}
+.estrelas{display:flex;gap:3px;color:var(--sol)}
+.estrelas svg{width:24px;height:24px}
+.nota small{display:block;font-weight:700;opacity:.9}
+.aval h2 + p{font-size:1.12rem;opacity:.95;max-width:540px}
+.deps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.dep{background:#fff;color:var(--tinta);border-radius:24px;padding:26px 24px;position:relative;box-shadow:0 18px 36px -20px rgba(0,40,90,.5)}
+.dep::before{content:"\201C";position:absolute;right:20px;top:-6px;font-family:var(--t);font-size:5rem;color:var(--creme-2);line-height:1}
+.dep .estrelas svg{width:17px;height:17px}
+.dep p{margin:12px 0 16px;font-size:.98rem;position:relative}
+.dep b{font-family:var(--t);font-weight:600}
+
+/* agendar */
+.agenda-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}
+.agenda-grid h2{margin:18px 0 18px}
+.agenda-grid .info p{color:var(--cinza);font-size:1.1rem}
+.passos{list-style:none;margin-top:30px;display:grid;gap:16px}
+.passos li{display:flex;gap:16px;align-items:center;font-weight:700}
+.passos li b{flex:none;width:42px;height:42px;border-radius:14px;display:grid;place-items:center;font-family:var(--t);color:#fff;font-size:1.2rem}
+.passos li:nth-child(1) b{background:var(--laranja)}
+.passos li:nth-child(2) b{background:var(--rosa)}
+.passos li:nth-child(3) b{background:var(--menta)}
+form.agenda{background:#fff;border-radius:36px;padding:38px 36px;box-shadow:0 30px 60px -30px rgba(120,60,10,.45);border:3px solid var(--creme-2)}
+.campo{margin-bottom:20px}
+.campo .lb,.campo label{display:block;font-family:var(--t);font-weight:600;font-size:1.02rem;margin-bottom:10px}
+.campo input{width:100%;border:2px solid var(--creme-2);background:var(--creme);border-radius:16px;padding:14px 16px;font:inherit;font-size:1rem;transition:.25s}
+.campo input:focus{outline:none;border-color:var(--laranja);background:#fff;box-shadow:0 0 0 5px rgba(255,122,26,.15)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chips button{border:2px solid var(--creme-2);background:var(--creme);padding:10px 15px;border-radius:999px;font-weight:700;font-size:.92rem;cursor:pointer;transition:transform .2s cubic-bezier(.3,1.6,.5,1),background .2s,border-color .2s;color:var(--tinta)}
+.chips button:hover{border-color:var(--laranja-2);transform:translateY(-2px)}
+.chips button[aria-pressed="true"]{background:var(--laranja);border-color:var(--laranja);color:#fff}
+.chips button small{display:block;font-size:.72rem;font-weight:600;opacity:.75}
+.chips.dias button{text-align:center;min-width:72px;line-height:1.2}
+form.agenda .btn{width:100%;justify-content:center;margin-top:10px;font-size:1.12rem;padding:18px}
+.obs{font-size:.84rem;color:var(--cinza);margin-top:14px;text-align:center}
+.aviso{display:none;color:#C2410C;font-weight:700;font-size:.9rem;margin-top:10px;text-align:center}
+.aviso.on{display:block}
+
+/* local */
+.local-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:30px;align-items:stretch}
+.local-card{background:var(--tinta);color:#fff;border-radius:var(--r);padding:40px}
+.local-card h2{font-size:clamp(1.9rem,3.6vw,2.6rem);margin-bottom:24px}
+.local-card .item{display:flex;gap:16px;margin-bottom:22px}
+.local-card .item i{flex:none;width:46px;height:46px;border-radius:16px;background:rgba(255,255,255,.1);display:grid;place-items:center;color:var(--sol)}
+.local-card .item i svg{width:22px;height:22px}
+.local-card .item b{display:block;font-family:var(--t);font-weight:600;font-size:1.1rem}
+.local-card .item span{color:#E9D6C4;font-size:.98rem}
+.horas{display:grid;grid-template-columns:auto auto;gap:4px 22px;color:#E9D6C4;font-size:.95rem;margin-top:4px}
+.horas .f{color:#FF9E9E}
+.local-card .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.mapa{border-radius:var(--r);overflow:hidden;min-height:420px;box-shadow:var(--sombra);border:6px solid #fff}
+.mapa iframe{width:100%;height:100%;min-height:420px;border:0;display:block}
+
+footer{padding:60px 0 40px;text-align:center}
+footer .logo{justify-content:center;margin-bottom:18px}
+footer p{color:var(--cinza);font-size:.9rem}
+footer .redes{display:flex;justify-content:center;gap:12px;margin:20px 0}
+footer .redes a{width:46px;height:46px;border-radius:16px;background:#fff;display:grid;place-items:center;box-shadow:var(--sombra);transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+footer .redes a:hover{transform:translateY(-4px) rotate(-6deg)}
+footer .redes svg{width:20px;height:20px}
+
+.wa-flut{position:fixed;right:20px;bottom:20px;z-index:60;width:62px;height:62px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 12px 28px -8px rgba(37,211,102,.7);transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.wa-flut:hover{transform:scale(1.1) rotate(-8deg)}
+.wa-flut svg{width:32px;height:32px;color:#fff}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(40px) scale(.97);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.3,1.4,.5,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.d1{transition-delay:.1s}.js .rv.d2{transition-delay:.2s}.js .rv.d3{transition-delay:.3s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}}
+
+@media (max-width:1020px){
+  .menu,.nav .btn{display:none}
+  .burger{display:grid;place-items:center}
+  header.aberto .menu{display:flex;position:absolute;top:78px;left:0;right:0;flex-direction:column;gap:0;background:var(--creme);padding:8px 20px 20px;box-shadow:0 20px 30px -20px rgba(120,60,10,.4)}
+  header.aberto .menu a{padding:14px 0;border-bottom:2px dashed var(--creme-2)}
+  .hero-grid,.espaco-grid,.aval-top,.agenda-grid,.local-grid{grid-template-columns:1fr;gap:50px}
+  .tranq-grid{grid-template-columns:1fr 1fr}
+  .serv-grid,.deps{grid-template-columns:1fr 1fr}
+  .equipe-foto{max-width:380px;margin:0 auto}
+}
+@media (max-width:640px){
+  .wrap{width:calc(100% - 32px)}
+  .pad{padding:80px 0}
+  .barra .wrap{justify-content:center;text-align:center}
+  .barra .sec{display:none}
+  .hero{padding:34px 0 90px}
+  .hero .ctas .btn{width:100%;justify-content:center}
+  .palco{height:500px}
+  .tela{width:240px;height:420px}
+  .foto-solta.a{width:130px;top:10px;left:-8px}
+  .foto-solta.b{width:124px;bottom:20px;right:0}
+  .balao{max-width:160px;font-size:.88rem;top:30px;right:-6px;padding:12px 14px}
+  .balao.l{max-width:150px;bottom:70px;left:-6px}
+  .tranq-grid,.serv-grid,.deps{grid-template-columns:1fr}
+  .servicos,.aval{border-radius:36px;margin:0 8px}
+  .loja{grid-template-columns:1fr;padding:30px 24px}
+  .galeria{columns:2 140px;column-gap:12px}
+  .pol{padding:7px 7px 10px;margin-bottom:14px}
+  .pol span{font-size:.9rem}
+  .espaco .midias{height:440px}
+  .duo{grid-template-columns:1fr}
+  form.agenda{padding:28px 20px;border-radius:28px}
+  .local-card{padding:30px 24px}
+  .faixa span{font-size:1.2rem}
+  .reel{width:210px}
+  .reels{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<div class="barra"><div class="wrap">
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Rua João Morais, 241, Centro, Camboriú</span>
+  <span class="sec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Ter a sex 8h às 17h · Sáb 8h às 14h</span>
+</div></div>
+
+<header id="topo">
+  <div class="wrap nav">
+    <a href="#" class="logo" aria-label="Patitas Pet Shop, início">
+      <span class="pata"><svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="6" cy="9" rx="2.2" ry="3"/><ellipse cx="18" cy="9" rx="2.2" ry="3"/><ellipse cx="9.5" cy="5" rx="2.2" ry="3"/><ellipse cx="14.5" cy="5" rx="2.2" ry="3"/><path d="M12 11c-3.5 0-6 3.6-6 6 0 2 1.6 3 3.3 3 1.2 0 1.8-.6 2.7-.6s1.5.6 2.7.6C16.4 20 18 19 18 17c0-2.4-2.5-6-6-6z"/></svg></span>
+      <span><b>PATITAS</b><small>PET SHOP</small></span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#servicos">Serviços</a>
+      <a href="#dia">Um dia aqui</a>
+      <a href="#clientes">Clientes</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#local">Onde estamos</a>
+    </nav>
+    <a href="#agendar" class="btn btn-laranja">Agendar horário</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="bolhas" id="bolhas" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="selo rv"><svg viewBox="0 0 24 24" fill="#FF7A1A"><path d="M12 21s-8-5.3-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.7-8 11-8 11z"/></svg>Banho e tosa em Camboriú</span>
+      <h1 class="rv d1">O melhor lugar para o seu <span class="destaque">pet!</span></h1>
+      <p class="lead rv d2">Banho, tosa, Day Use e Leva e Traz feitos com carinho, qualidade e dedicação. Seu pet volta limpinho, cheiroso e feliz, e você fica tranquilo do começo ao fim.</p>
+      <div class="ctas rv d3">
+        <a href="#agendar" class="btn btn-laranja">Agendar pelo WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#servicos" class="btn btn-branco">Ver serviços</a>
+      </div>
+      <div class="provas rv d3">
+        <span class="selo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7-6.2-3.6-6.2 3.6 1.4-7L2 9.3l7-.8z"/></svg>5,0 no Google</span>
+        <span class="selo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v18M5 7l14 10M19 7L5 17"/></svg>Ambiente climatizado</span>
+        <span class="selo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 16V8h11v8M14 11h4l3 3v2h-7"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>Leva e Traz</span>
+      </div>
+    </div>
+    <div class="palco rv d2">
+      <div class="tela"><video src="video/hero.mp4" poster="img/poster-hero.webp" autoplay muted loop playsinline preload="metadata" aria-label="Pet tomando banho no Patitas"></video></div>
+      <figure class="foto-solta a"><img src="img/akita.webp" alt="Aika, akita sorrindo depois do banho"><span>Aika 🧡</span></figure>
+      <figure class="foto-solta b"><img src="img/bulldog.webp" alt="Buldogue inglês com faixa do Brasil"><span>Torcedor oficial</span></figure>
+      <div class="balao">Banho bom é aquele que termina assim: limpinho, cheiroso e FELIZ!</div>
+      <div class="balao l">Aqui tem carinho de sobra 🐾</div>
+    </div>
+  </div>
+</section>
+
+<div class="faixa" aria-hidden="true"><div class="trilho">
+  <span>Banho</span><span>Tosa</span><span>Hidratação</span><span>Day Use</span><span>Leva e Traz</span><span>Rações e acessórios</span>
+  <span>Banho</span><span>Tosa</span><span>Hidratação</span><span>Day Use</span><span>Leva e Traz</span><span>Rações e acessórios</span>
+</div></div>
+
+<section class="pad">
+  <div class="wrap">
+    <div class="cab">
+      <span class="selo rv">Pra você deixar seu pet tranquilo</span>
+      <h2 class="rv d1">Cuidado de verdade, <span class="destaque">sem pressa</span> e sem estresse.</h2>
+      <p class="rv d2">Aqui seu pet é recebido com atenção, paciência e aquele toque de afeto que faz toda a diferença. Tratado como parte da família.</p>
+    </div>
+    <div class="tranq-grid">
+      <div class="tq rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 21s-8-5.3-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.7-8 11-8 11z"/></svg></div><h3>No ritmo do seu pet</h3><p>Cada banho é feito com técnica, atenção e respeito ao jeitinho de cada um. Nada de pressa.</p></div>
+      <div class="tq rv d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16 14.2c3 .2 5 2.6 5 5.8"/></svg></div><h3>Equipe especializada</h3><p>Profissionais que entendem de diferentes raças e temperamentos, para um atendimento seguro.</p></div>
+      <div class="tq rv d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v18M4.5 7.5l15 9M19.5 7.5l-15 9"/></svg></div><h3>Ambiente calmo</h3><p>Espaço climatizado e aconchegante, pensado para o pet relaxar do início ao fim.</p></div>
+      <div class="tq rv d3"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 3h6M10 3v5L5 18a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-10V3"/><path d="M7.5 14h9"/></svg></div><h3>Produtos profissionais</h3><p>Linha profissional de alta qualidade, que limpa sem agredir e deixa o pelo impecável.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="servicos pad" id="servicos">
+  <div class="wrap">
+    <div class="cab">
+      <span class="selo rv">Serviços</span>
+      <h2 class="rv d1">Tudo o que seu pet precisa, <span class="destaque">num só lugar</span>.</h2>
+    </div>
+    <div class="serv-grid">
+      <article class="sv rv">
+        <div class="foto"><img src="img/banho.webp" alt="Cachorro sendo seco depois do banho" loading="lazy"><span class="tag" style="background:var(--ceu)">Banho</span></div>
+        <div class="corpo"><h3>Banho</h3><p>Banho que você vê e sente a diferença. Pele saudável, pelo macio e aquele cheirinho gostoso que dura.</p><a class="ag" href="#agendar" data-serv="Banho">Agendar banho <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+      <article class="sv rv d1">
+        <div class="foto"><img src="img/lulu-bandana.webp" alt="Lulu da Pomerânia tosado, com bandana" loading="lazy"><span class="tag" style="background:var(--rosa)">Tosa</span></div>
+        <div class="corpo"><h3>Tosa</h3><p>Feita respeitando a raça, a pelagem e a personalidade de cada pet. No Lulu, por exemplo, a tosa é na tesoura, sem raspar.</p><a class="ag" href="#agendar" data-serv="Tosa">Agendar tosa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+      <article class="sv rv d2">
+        <div class="foto"><img src="img/argan.webp" alt="Chihuahua ao lado dos produtos da linha Argan" loading="lazy"><span class="tag" style="background:var(--lilas)">Hidratação</span></div>
+        <div class="corpo"><h3>Hidratação</h3><p>Linha Premium Argan e Hidratação com Máscara de Chocolate: pelo mais macio, brilhante, alinhado e sem frizz.</p><a class="ag" href="#agendar" data-serv="Hidratação">Adicionar ao banho <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+      <article class="sv rv">
+        <div class="foto"><img src="img/gato.webp" alt="Gato branco durante a remoção de pelos" loading="lazy"><span class="tag" style="background:var(--menta)">Pelagem</span></div>
+        <div class="corpo"><h3>Remoção de pelos mortos</h3><p>Menos pelo pela casa e mais conforto pro pet. A pele respira, a queda diminui e os nós somem.</p><a class="ag" href="#agendar" data-serv="Remoção de pelos mortos">Agendar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+      <article class="sv rv d1">
+        <div class="foto"><img src="img/golden.webp" alt="Golden retriever feliz no Patitas" loading="lazy"><span class="tag" style="background:var(--sol);color:var(--tinta)">Day Use</span></div>
+        <div class="corpo"><h3>Day Use</h3><p>Um lugar confiável pro seu pet passar o dia: brincar, descansar e socializar, sempre acompanhado pela nossa equipe.</p><a class="ag" href="#agendar" data-serv="Day Use">Agendar Day Use <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+      <article class="sv rv d2">
+        <div class="foto"><img src="img/leva-traz.webp" alt="Lulu laranja passeando de carro" loading="lazy"><span class="tag" style="background:var(--laranja)">Leva e Traz</span></div>
+        <div class="corpo"><h3>Leva e Traz</h3><p>Seu pet vai e volta com conforto e segurança, num transporte preparado pra ele. Prático pra você, tranquilo pra ele.</p><a class="ag" href="#agendar" data-serv="Leva e Traz">Agendar Leva e Traz <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+    </div>
+    <div class="loja rv">
+      <div>
+        <h3>E uma loja completa pro seu pet 🛍️</h3>
+        <p>Passou pro banho? Aproveita e leva o que ele ama. Tudo escolhido com o mesmo carinho.</p>
+        <div class="itens"><span>Rações</span><span>Petiscos</span><span>Higiene</span><span>Brinquedos</span><span>Caminhas</span><span>Roupinhas</span><span>Coleiras</span><span>Antipulgas</span></div>
+      </div>
+      <a href="https://wa.me/5547996912900?text=Ol%C3%A1%2C%20Patitas!%20Vim%20pelo%20site%20e%20queria%20saber%20sobre%20um%20produto." target="_blank" rel="noopener" class="btn btn-branco">Perguntar por um produto</a>
+    </div>
+  </div>
+</section>
+
+<section class="reels-wrap pad" id="dia">
+  <div class="wrap">
+    <div class="cab">
+      <span class="selo rv">Direto do nosso Instagram</span>
+      <h2 class="rv d1">Os dias no Patitas são assim.</h2>
+      <p class="rv d2">Muitos banhos, muito amor, carinho de sobra e patinhas felizes. Dá o play (com som!).</p>
+    </div>
+  </div>
+  <div class="reels" id="reels">
+    <button class="reel rv" data-v="video/r60.mp4"><div class="cx"><img src="img/poster-r60.webp" alt="" loading="lazy"><div class="play"><b><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg></b></div></div><p>"Meu cachorro tá demorando no banho" 😂</p></button>
+    <button class="reel rv d1" data-v="video/r16.mp4"><div class="cx"><img src="img/poster-r16.webp" alt="" loading="lazy"><div class="play"><b><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg></b></div></div><p>"Ele é um anjo, nunca mordeu ninguém" ☝🏻</p></button>
+    <button class="reel rv d2" data-v="video/r67.mp4"><div class="cx"><img src="img/poster-r67.webp" alt="" loading="lazy"><div class="play"><b><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg></b></div></div><p>Do banho à tosa, com todo carinho</p></button>
+    <button class="reel rv d3" data-v="video/r40.mp4"><div class="cx"><img src="img/poster-r40.webp" alt="" loading="lazy"><div class="play"><b><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg></b></div></div><p>Quando a equipe chega e o pet já assumiu o posto 🐾</p></button>
+    <button class="reel rv d2" data-v="video/r31.mp4"><div class="cx"><img src="img/poster-r31.webp" alt="" loading="lazy"><div class="play"><b><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg></b></div></div><p>Não é fácil ser filho do dono 🤣</p></button>
+    <button class="reel rv d3" data-v="video/r15.mp4"><div class="cx"><img src="img/poster-r15.webp" alt="" loading="lazy"><div class="play"><b><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg></b></div></div><p>Hora do carinho com o tio Vitor 🧡</p></button>
+  </div>
+</section>
+
+<section class="pad" id="clientes">
+  <div class="wrap">
+    <div class="cab">
+      <span class="selo rv">Mural dos clientes</span>
+      <h2 class="rv d1">Quem passa por aqui <span class="destaque">sai sorrindo</span>.</h2>
+      <p class="rv d2">Cada rabinho balançando faz o nosso dia valer a pena.</p>
+    </div>
+    <div class="galeria">
+      <figure class="pol rv"><img src="img/akita.webp" alt="Aika, akita sorrindo" loading="lazy"><span>Aika, só sorrisos</span></figure>
+      <figure class="pol rv d1"><img src="img/lulu.webp" alt="George, lulu da pomerânia com bandana vermelha" loading="lazy"><span>Dia de banho do George</span></figure>
+      <figure class="pol rv d2"><img src="img/buldogue-frances.webp" alt="Buldogue francês com laço amarelo" loading="lazy"><span>Laço novo, quem?</span></figure>
+      <figure class="pol rv d3"><img src="img/touca.webp" alt="Cachorro de touca amarela no banho" loading="lazy"><span>Hora do banho! 💦</span></figure>
+      <figure class="pol rv"><img src="img/shihtzu.webp" alt="Shih tzu com bandana" loading="lazy"><span>Cheiroso e fofinho</span></figure>
+      <figure class="pol rv d1"><img src="img/chihuahua-rosa.webp" alt="Chihuahua de roupinha rosa" loading="lazy"><span>Pronta pro frio</span></figure>
+      <figure class="pol rv d2"><img src="img/yorkie-laco.webp" alt="Yorkshire com lacinho" loading="lazy"><span>Lacinho no lugar</span></figure>
+      <figure class="pol rv d3"><img src="img/pequeno-bandana.webp" alt="Cachorro pequeno com bandana colorida" loading="lazy"><span>Visual novo</span></figure>
+      <figure class="pol rv"><img src="img/chihuahua-mascara.webp" alt="Chihuahua com gravata vermelha ao lado da máscara de hidratação" loading="lazy"><span>Pelo de comercial</span></figure>
+      <figure class="pol rv d1"><img src="img/yorkie.webp" alt="Yorkshire depois da tosa" loading="lazy"><span>Tosa caprichada</span></figure>
+      <figure class="pol rv d2"><img src="img/bulldog.webp" alt="Buldogue com faixa do Brasil" loading="lazy"><span>Torcedor oficial</span></figure>
+      <figure class="pol rv d3"><img src="img/tosa.webp" alt="Cachorro preto feliz durante a tosa" loading="lazy"><span>Relaxado na tosa</span></figure>
+    </div>
+  </div>
+</section>
+
+<section class="pad espaco" style="padding-top:20px">
+  <div class="wrap espaco-grid">
+    <div class="midias rv">
+      <div class="v"><video src="video/espaco.mp4" poster="img/poster-espaco.webp" muted loop playsinline preload="none" id="vEspaco" aria-label="Tour pelo espaço do Patitas"></video></div>
+      <div class="f1"><img src="img/fachada.webp" alt="Vitrine do Patitas com o logo" loading="lazy"></div>
+      <div class="f2"><img src="img/placa.webp" alt="Bandeira Pet Shop Patitas" loading="lazy"></div>
+    </div>
+    <div>
+      <span class="selo rv">Nosso cantinho</span>
+      <h2 class="rv d1" style="margin-top:18px">Um cantinho cheio de amor no coração de Camboriú.</h2>
+      <p class="txt rv d2">Vem conhecer nosso espaço e sentir de perto todo o cuidado que dedicamos a quem você ama.</p>
+      <ul class="lista rv d2">
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12l5 5 9-10"/></svg></i>Ambiente climatizado e aconchegante</li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12l5 5 9-10"/></svg></i>Profissionais qualificados e apaixonados por bicho</li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12l5 5 9-10"/></svg></i>Produtos de alta qualidade em cada banho</li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12l5 5 9-10"/></svg></i>Loja com tudo pro dia a dia do seu pet</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="aval pad" id="avaliacoes">
+  <div class="wrap">
+    <div class="aval-top">
+      <div class="equipe-foto rv">
+        <img src="img/equipe.webp" alt="Profissional do Patitas segurando um cachorro no colo" loading="lazy">
+        <div class="adesivo">Feito por quem<br>ama bicho 🧡</div>
+      </div>
+      <div>
+        <span class="selo rv" style="color:var(--tinta)">Avaliações no Google</span>
+        <div class="nota rv d1"><b>5,0</b><div><div class="estrelas"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7-6.2-3.6-6.2 3.6 1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7-6.2-3.6-6.2 3.6 1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7-6.2-3.6-6.2 3.6 1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7-6.2-3.6-6.2 3.6 1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7-6.2-3.6-6.2 3.6 1.4-7L2 9.3l7-.8z"/></svg></div><small>16 avaliações, todas 5 estrelas</small></div></div>
+        <h2 class="rv d2">Tutor tranquilo, pet feliz.</h2>
+        <p class="rv d2">Quem confia o seu melhor amigo pra gente conta como foi.</p>
+      </div>
+    </div>
+    <div class="deps">
+      <div class="dep rv"><div class="estrelas">★★★★★</div><p>Amei, atendimento maravilhoso, meu filho de 4 patas veio super cheiroso e muito feliz, elas têm um cuidado muito especial com os bichinhos.</p><b>Caroline K.</b></div>
+      <div class="dep rv d1"><div class="estrelas">★★★★★</div><p>Trabalho excelente! As meninas super atenciosas, local aconchegante, meus pets amam!!</p><b>Raissa R.</b></div>
+      <div class="dep rv d2"><div class="estrelas">★★★★★</div><p>Pet de confiança e trabalho impecável!</p><b>Camilla M.</b></div>
+      <div class="dep rv"><div class="estrelas">★★★★★</div><p>O melhor pet de Camboriú! Minha princesa frequenta há anos.</p><b>Emanuelle V.</b></div>
+      <div class="dep rv d1"><div class="estrelas">★★★★★</div><p>Ótimo atendimento, funcionárias prestativas e muito competentes, levarei mais vezes meu cachorro.</p><b>Vytor E.</b></div>
+      <div class="dep rv d2"><div class="estrelas">★★★★★</div><p>Excelente lugar para os pets! Profissionais de alto nível! Estão de parabéns pelo trabalho desempenhado.</p><b>Filipe G.</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="agendar">
+  <div class="wrap agenda-grid">
+    <div class="info">
+      <span class="selo rv">Agendamento</span>
+      <h2 class="rv d1">Marque o horário do seu <span class="destaque">melhor amigo</span>.</h2>
+      <p class="rv d2">Escolha o que ele precisa e o melhor dia pra você. A mensagem chega pronta no nosso WhatsApp e a equipe confirma o horário.</p>
+      <ol class="passos rv d2">
+        <li><b>1</b>Conte quem é o seu pet</li>
+        <li><b>2</b>Escolha serviço, dia e período</li>
+        <li><b>3</b>Envie e a gente confirma</li>
+      </ol>
+    </div>
+    <form class="agenda rv d1" id="form" data-wa="5547996912900" novalidate>
+      <div class="duo">
+        <div class="campo"><label for="pet">Nome do pet</label><input id="pet" placeholder="Ex.: Thor" autocomplete="off"></div>
+        <div class="campo"><label for="raca">Raça</label><input id="raca" placeholder="Ex.: Shih tzu, SRD" autocomplete="off"></div>
+      </div>
+      <div class="campo"><span class="lb">É um...</span><div class="chips" data-g="especie"><button type="button">🐶 Cachorro</button><button type="button">🐱 Gato</button></div></div>
+      <div class="campo"><span class="lb">Porte</span><div class="chips" data-g="porte"><button type="button">Pequeno</button><button type="button">Médio</button><button type="button">Grande</button></div></div>
+      <div class="campo"><span class="lb">Serviços (pode marcar mais de um)</span><div class="chips" data-g="servico" data-multi>
+        <button type="button">Banho</button><button type="button">Tosa</button><button type="button">Hidratação</button><button type="button">Remoção de pelos mortos</button><button type="button">Day Use</button><button type="button">Leva e Traz</button>
+      </div></div>
+      <div class="campo"><span class="lb">Dia</span><div class="chips dias" data-g="dia" id="dias"></div></div>
+      <div class="campo"><span class="lb">Período</span><div class="chips" data-g="periodo"><button type="button">Manhã</button><button type="button" id="tarde">Tarde</button></div></div>
+      <button class="btn btn-laranja" type="submit"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .3-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Enviar pelo WhatsApp</button>
+      <div class="aviso" id="aviso"></div>
+      <div class="obs">Funcionamos de terça a sábado. A equipe confirma a disponibilidade pelo WhatsApp.</div>
+    </form>
+  </div>
+</section>
+
+<section class="pad" id="local" style="padding-top:0">
+  <div class="wrap local-grid">
+    <div class="local-card rv">
+      <h2>Vem visitar a gente 🐾</h2>
+      <div class="item"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></i><div><b>Endereço</b><span>Rua João Morais, 241, Centro<br>Camboriú, SC · 88340-338</span></div></div>
+      <div class="item"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></i><div><b>Horário</b><div class="horas"><span>Terça a sexta</span><span>8h às 17h</span><span>Sábado</span><span>8h às 14h</span><span>Domingo e segunda</span><span class="f">Fechado</span></div></div></div>
+      <div class="item"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></i><div><b>WhatsApp</b><span>(47) 99691-2900</span></div></div>
+      <div class="btns">
+        <a class="btn btn-laranja" href="https://wa.me/5547996912900?text=Ol%C3%A1%2C%20Patitas!%20Vim%20pelo%20site." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        <a class="btn btn-branco" href="https://www.google.com/maps/search/?api=1&query=Patitas+Pet+Shop+Rua+Jo%C3%A3o+Morais+241+Cambori%C3%BA" target="_blank" rel="noopener">Como chegar</a>
+      </div>
+    </div>
+    <div class="mapa rv d1"><iframe src="https://www.google.com/maps?q=Patitas+Pet+Shop,+Rua+Jo%C3%A3o+Morais,+241,+Cambori%C3%BA+SC&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa do Patitas Pet Shop"></iframe></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="#" class="logo"><span class="pata"><svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="6" cy="9" rx="2.2" ry="3"/><ellipse cx="18" cy="9" rx="2.2" ry="3"/><ellipse cx="9.5" cy="5" rx="2.2" ry="3"/><ellipse cx="14.5" cy="5" rx="2.2" ry="3"/><path d="M12 11c-3.5 0-6 3.6-6 6 0 2 1.6 3 3.3 3 1.2 0 1.8-.6 2.7-.6s1.5.6 2.7.6C16.4 20 18 19 18 17c0-2.4-2.5-6-6-6z"/></svg></span><span><b>PATITAS</b><small>PET SHOP</small></span></a>
+    <p>O melhor lugar para o seu pet! 🧡</p>
+    <div class="redes">
+      <a href="https://www.instagram.com/patitascamboriu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+      <a href="https://www.threads.com/@patitascamboriu" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16.5 11.5c-.4-2.4-2-3.5-4.2-3.5-2.5 0-4 1.6-4 3.4 0 1.7 1.4 2.9 3.5 2.9 2.6 0 4-1.7 4-4.6 0-4-2.6-6.7-6-6.7S3.6 5.7 3.6 12s3.1 8 7.6 8c3.4 0 6.6-1.7 6.6-5 0-2-1.4-3.1-3.3-3.4"/></svg></a>
+      <a href="https://wa.me/5547996912900" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></a>
+    </div>
+    <p>© 2026 Patitas Pet Shop · Rua João Morais, 241, Centro, Camboriú, SC</p>
+  </div>
+</footer>
+
+<a class="wa-flut" href="https://wa.me/5547996912900?text=Ol%C3%A1%2C%20Patitas!%20Vim%20pelo%20site." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .3-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
+
+<script>
+(()=>{
+  const reduz = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const h=document.getElementById('topo');
+  const onS=()=>h.classList.toggle('sombra',scrollY>10);onS();addEventListener('scroll',onS,{passive:true});
+  const b=document.getElementById('burger');
+  b.onclick=()=>{const o=h.classList.toggle('aberto');b.setAttribute('aria-expanded',o)};
+  document.querySelectorAll('#menu a').forEach(a=>a.onclick=()=>h.classList.remove('aberto'));
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+  // bolhas de sabão
+  if(!reduz){const bx=document.getElementById('bolhas');for(let i=0;i<16;i++){const s=document.createElement('i');const t=14+Math.random()*46;s.style.cssText=`width:${t}px;height:${t}px;left:${Math.random()*100}%;animation-duration:${9+Math.random()*10}s;animation-delay:${-Math.random()*16}s`;bx.appendChild(s);}}
+
+  // vídeo do espaço toca quando aparece
+  const ve=document.getElementById('vEspaco');
+  new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&!reduz)ve.play().catch(()=>{});else ve.pause()}),{threshold:.3}).observe(ve);
+
+  // reels: um de cada vez
+  let atual=null;
+  document.querySelectorAll('.reel').forEach(r=>r.addEventListener('click',()=>{
+    if(r.classList.contains('tocando'))return;
+    if(atual){const v=atual.querySelector('video');v.pause();v.remove();atual.querySelector('img').style.display='';atual.classList.remove('tocando');}
+    const v=document.createElement('video');v.src=r.dataset.v;v.playsInline=true;v.controls=true;v.autoplay=true;
+    r.querySelector('img').style.display='none';r.querySelector('.cx').prepend(v);r.classList.add('tocando');v.play().catch(()=>{});atual=r;
+    v.onended=()=>{v.remove();r.querySelector('img').style.display='';r.classList.remove('tocando');atual=null};
+  }));
+
+  // dias: próximos 6 dias abertos (ter a sáb)
+  const dias=document.getElementById('dias'),nomes=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+  const hoje=new Date();let n=0;
+  for(let i=0;n<6&&i<14;i++){const d=new Date(hoje);d.setDate(hoje.getDate()+i);const w=d.getDay();if(w===0||w===1)continue;
+    const bt=document.createElement('button');bt.type='button';bt.dataset.sab=w===6?'1':'';
+    const rot=i===0?'Hoje':i===1?'Amanhã':nomes[w];
+    bt.dataset.txt=(i<2?rot+' ':'')+nomes[w]+' '+String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0');
+    bt.innerHTML=rot+'<small>'+String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')+'</small>';dias.appendChild(bt);n++;}
+
+  const tarde=document.getElementById('tarde');
+  document.querySelectorAll('.chips').forEach(g=>{const multi=g.hasAttribute('data-multi');
+    g.querySelectorAll('button').forEach(bt=>{bt.setAttribute('aria-pressed','false');bt.addEventListener('click',()=>{
+      if(!multi)g.querySelectorAll('button').forEach(x=>x!==bt&&x.setAttribute('aria-pressed','false'));
+      bt.setAttribute('aria-pressed',bt.getAttribute('aria-pressed')==='true'?'false':'true');
+      if(g.dataset.g==='dia'){const sab=bt.dataset.sab&&bt.getAttribute('aria-pressed')==='true';tarde.disabled=!!sab;tarde.style.opacity=sab?.4:1;if(sab)tarde.setAttribute('aria-pressed','false');}
+    })});
+  });
+
+  // atalhos dos cards de serviço
+  document.querySelectorAll('[data-serv]').forEach(a=>a.addEventListener('click',()=>{
+    document.querySelectorAll('[data-g="servico"] button').forEach(bt=>{if(bt.textContent===a.dataset.serv)bt.setAttribute('aria-pressed','true')});
+  }));
+
+  const f=document.getElementById('form'),av=document.getElementById('aviso');
+  const sel=g=>[...f.querySelectorAll('[data-g="'+g+'"] [aria-pressed="true"]')].map(x=>x.dataset.txt||x.textContent.replace(/^[^\p{L}]+/u,'').trim());
+  f.onsubmit=e=>{e.preventDefault();
+    const serv=sel('servico');
+    if(!serv.length){av.textContent='Escolha pelo menos um serviço 🐾';av.classList.add('on');return}
+    av.classList.remove('on');
+    const pet=f.pet.value.trim(),raca=f.raca.value.trim();
+    const l=['Olá, Patitas! Vim pelo site e quero agendar um horário 🐾',''];
+    if(pet)l.push('Pet: '+pet+(raca?' ('+raca+')':''));else if(raca)l.push('Raça: '+raca);
+    if(sel('especie').length)l.push('É um: '+sel('especie')[0]);
+    if(sel('porte').length)l.push('Porte: '+sel('porte')[0]);
+    l.push('Serviço: '+serv.join(', '));
+    if(sel('dia').length)l.push('Dia: '+sel('dia')[0]);
+    if(sel('periodo').length)l.push('Período: '+sel('periodo')[0]);
+    l.push('','Tem horário?');
+    window.open('https://wa.me/'+f.dataset.wa+'?text='+encodeURIComponent(l.join('\n')),'_blank','noopener');
+  };
+})();
+</script>
+</body>
+</html>
